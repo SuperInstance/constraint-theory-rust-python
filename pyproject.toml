@@ -1,0 +1,25 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "flux-constraint"
+version = "0.1.0"
+description = "Rust constraint engine — bare-metal constraint checking from Python"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+    "Intended Audience :: Science/Research",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "maturin>=1.0"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "flux_constraint._flux"
