@@ -19,10 +19,10 @@ from flux_constraint import (
 def test_quick_check():
     """Test the convenience check() function."""
     r = check(50, 0, 100)
-    assert r.pass_ is True or r.pass is True  # Handle both native and pure-Python
+    assert r.pass_ is True  # native uses pass_
 
     r = check(200, 0, 100)
-    assert r.pass_ is False or r.pass is False
+    assert r.pass_ is False
 
 
 def test_constraint_basic():
@@ -32,7 +32,7 @@ def test_constraint_basic():
     assert c.hi == 55
 
     r = c.check(30)
-    assert r.pass_ is True or r.pass is True
+    assert r.pass_ is True
     assert r.saturated_value == 30
 
 
@@ -81,8 +81,8 @@ def test_engine_parallel():
     for s_row, p_row in zip(seq, par):
         assert len(s_row) == len(p_row)
         for s, p in zip(s_row, p_row):
-            s_pass = s.pass_ if hasattr(s, 'pass_') else s.pass
-            p_pass = p.pass_ if hasattr(p, 'pass_') else p.pass
+            s_pass = s.pass_
+            p_pass = p.pass_
             assert s_pass == p_pass
 
 
