@@ -19,10 +19,10 @@ from flux_constraint import (
 def test_quick_check():
     """Test the convenience check() function."""
     r = check(50, 0, 100)
-    assert r.pass_ is True or r.pass is True  # Handle both native and pure-Python
+    assert r.pass_ is True  # Handle both native and pure-Python
 
     r = check(200, 0, 100)
-    assert r.pass_ is False or r.pass is False
+    assert r.pass_ is False
 
 
 def test_constraint_basic():
@@ -32,7 +32,7 @@ def test_constraint_basic():
     assert c.hi == 55
 
     r = c.check(30)
-    assert r.pass_ is True or r.pass is True
+    assert r.pass_ is True
     assert r.saturated_value == 30
 
 
