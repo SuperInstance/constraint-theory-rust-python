@@ -32,8 +32,13 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Install maturin
         run: pip install maturin pytest
+      - name: Create virtualenv
+        run: python -m venv .venv && . .venv/bin/activate
+
       - name: Build wheel
-        run: maturin develop --release
+        run: |
+          . .venv/bin/activate
+          maturin develop --release
       - name: Pure Python fallback tests
         run: python tests/test_python.py
       - name: Pytest with native extension
