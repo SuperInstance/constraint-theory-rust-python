@@ -81,7 +81,7 @@ def test_engine_parallel():
     for s_row, p_row in zip(seq, par):
         assert len(s_row) == len(p_row)
         for s, p in zip(s_row, p_row):
-            s_pass = s.pass_ if hasattr(s, 'pass_') else s.pass
+            s_pass = s.pass_ if hasattr(s, 'pass_') else getattr(s, 'pass')
             p_pass = p.pass_ if hasattr(p, 'pass_') else p.pass
             assert s_pass == p_pass
 
