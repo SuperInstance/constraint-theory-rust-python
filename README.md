@@ -1,5 +1,9 @@
 # constraint-theory-rust-python
 
+[![PyPI version](https://img.shields.io/pypi/v/cocapn)](https://pypi.org/project/cocapn/) [![crates.io](https://img.shields.io/crates/v/placeholder)](https://crates.io/crates/placeholder) [![SuperInstance](https://img.shields.io/badge/SuperInstance-Ecosystem-blue)](https://github.com/SuperInstance)
+
+
+
 Rust constraint engine with Python bindings (PyO3) — INT8 saturation semantics, batch constraint checking, and zero-copy Python interop.
 
 ## What This Gives You
@@ -94,3 +98,7 @@ pip install constraint-engine-rs
 ## License
 
 MIT
+
+## Documentation
+
+📚 [OpenConstruct Docs](https://github.com/SuperInstance/openconstruct-docs)
